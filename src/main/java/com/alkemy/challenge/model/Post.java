@@ -14,14 +14,15 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.alkemy.challenge.security.model.User;
-
 
 @Entity
 @Table(name="post")
 @SQLDelete(sql="UPDATE post SET post_deleted = true  WHERE pId=?")
 @Where(clause="post_deleted=false")
+
 public class Post {
 
 	@Id
@@ -39,6 +40,7 @@ public class Post {
 	private String img;
 	
 	@Column(name="post_creation_date")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate creationDate;
 		
 	@Column(name="post_user_id")
@@ -50,11 +52,11 @@ public class Post {
 	@Column(name="post_deleted")
 	private boolean deleted=Boolean.FALSE;
 	
-	@ManyToOne(cascade ={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+	@ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	@JoinColumn(name="post_user_id", insertable=false,updatable=false)
 	private User user;
 	
-	@ManyToOne(cascade ={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+	@ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	@JoinColumn(name="post_category_id", insertable=false,updatable=false)
 	private Category category;
 	
