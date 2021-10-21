@@ -14,12 +14,6 @@ import javax.persistence.Table;
 
 import com.alkemy.challenge.security.model.User;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Setter
-@Getter
-
 @Entity
 @Table(name="post")
 public class Post {
@@ -56,4 +50,78 @@ public class Post {
 	private Category category;
 	
 	public Post() {}
+
+	public Long getpId() {
+		return pId;
+	}
+
+	public void setpId(Long pId) {
+		this.pId = pId;
+	}
+
+	public String getTittle() {
+		return tittle;
+	}
+
+	public void setTittle(String tittle) {
+		this.tittle = tittle;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public LocalDate getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(LocalDate creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public Long getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(Long categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	
+	
 }
