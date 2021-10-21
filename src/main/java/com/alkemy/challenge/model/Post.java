@@ -12,10 +12,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 import com.alkemy.challenge.security.model.User;
+
 
 @Entity
 @Table(name="post")
+@SQLDelete(sql="UPDATE post SET post_deleted = true  WHERE pId=?")
+@Where(clause="post_deleted=false")
 public class Post {
 
 	@Id
@@ -40,6 +46,9 @@ public class Post {
 	
 	@Column(name="post_category_id")
 	private Long categoryId;
+	
+	@Column(name="post_deleted")
+	private boolean deleted=Boolean.FALSE;
 	
 	@ManyToOne(cascade ={CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	@JoinColumn(name="post_user_id", insertable=false,updatable=false)
@@ -122,6 +131,13 @@ public class Post {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
-	
+
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
+	}
 	
 }
