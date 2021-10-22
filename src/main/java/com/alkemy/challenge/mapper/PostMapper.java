@@ -3,21 +3,24 @@ package com.alkemy.challenge.mapper;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.alkemy.challenge.dto.PostDto;
 import com.alkemy.challenge.dto.PostDtoGetAll;
 import com.alkemy.challenge.model.Post;
 
+@Component
 public class PostMapper {
 	
 	@Autowired 
 	CategoryMapper categoryMapper;
 
-	public Post toPost(PostDto postDto) {
+	public Post toPost(PostDto postDto, Long userId) {
 
 		Post post = new Post();
-
+		post.setUserId(userId);
 		refreshPost(post, postDto);
-
+		
 		return post;
 	}
 
@@ -57,7 +60,6 @@ public class PostMapper {
 			post.setImg(postDto.getImg());
 			post.setCategoryId(postDto.getCategoryId());
 			post.setCreationDate(postDto.getCreationDate());
-			post.setUserId(postDto.getUserId());
 		}
 	}
 
@@ -76,7 +78,7 @@ public class PostMapper {
 				postDtoGetAll.setImg(p.getImg());
 				postDtoGetAll.setCreationDate(p.getCreationDate());
 				postDtoGetAll.setCategoryDto(categoryMapper.toCategoryDto(p.getCategory()));
-				
+			
 				dtos.add(postDtoGetAll);
 			}
 			
