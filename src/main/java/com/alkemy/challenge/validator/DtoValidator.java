@@ -1,13 +1,16 @@
 package com.alkemy.challenge.validator;
 
+import org.springframework.stereotype.Component;
+
 import com.alkemy.challenge.dto.CategoryDto;
 import com.alkemy.challenge.dto.PostDto;
 
+@Component
 public class DtoValidator {
 
 	public boolean categoryDtoIsValid(CategoryDto categoryDto) {
 
-		if (categoryDto.getName() != null && !categoryDto.getName().isBlank()) {
+		if (postDtoStringIsValid(categoryDto.getName())) {
 
 			return true;
 		}
@@ -18,8 +21,8 @@ public class DtoValidator {
 	public boolean postDtoIsValid(PostDto postDto) {
 
 		if (postDtoStringIsValid(postDto.getTittle()) && postDtoStringIsValid(postDto.getContent())
-				&& postDtoImgIsValid(postDto) && postDtoIdValid(postDto.getCategoryId())
-				&& postDtoIdValid(postDto.getUserId()) && postDto.getCreationDate() != null) {
+				&& postDtoImgIsValid(postDto.getImg()) && postDtoIdValid(postDto.getCategoryId())
+				&& postDto.getCreationDate() != null) {
 
 			return true;
 		}
@@ -33,9 +36,7 @@ public class DtoValidator {
 
 	}
 
-	private boolean postDtoImgIsValid(PostDto postDto) {
-
-		String img = postDto.getImg();
+	private boolean postDtoImgIsValid(String img) {
 
 		if (postDtoStringIsValid(img)) {
 
