@@ -5,10 +5,9 @@ import java.util.List;
 import com.alkemy.challenge.dto.PostDto;
 import com.alkemy.challenge.dto.PostDtoGetAll;
 
-
 public interface PostService  {
 
-	PostDto savePost(PostDto postDto);
+	PostDto savePost(PostDto postDto,String username);
 	
 	PostDto getPost (Long id);
 	
