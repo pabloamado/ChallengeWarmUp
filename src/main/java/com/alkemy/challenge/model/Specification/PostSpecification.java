@@ -7,11 +7,12 @@ import javax.persistence.criteria.Join;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import com.alkemy.challenge.model.Category;
 import com.alkemy.challenge.model.Post;
 
-
+@Component
 public class PostSpecification {
 
 	public Specification<Post> getByFilters(String tittle, Long categoryId) {
