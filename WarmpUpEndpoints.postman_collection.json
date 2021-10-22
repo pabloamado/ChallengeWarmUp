@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "c8cad545-4d63-4acc-b12b-7433276ae540",
+		"name": "Challenge Warmp Up endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth/sign_up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"pablo-476@hotmail.com\",\r\n    \"password\":\"123456\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/sign_up",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"pablo-476@hotmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYWJsby00NzZAaG90bWFpbC5jb20iLCJleHAiOjE2MzQ4OTQ2MTksImlhdCI6MTYzNDg1ODYxOX0.HaEqEPBdKcdwmf0JpUjGCP1yPgTAGvdeE8yT6xXhCY4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"estudio\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/category",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"category"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category/id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYWJsby00NzZAaG90bWFpbC5jb20iLCJleHAiOjE2MzQ4OTQ2MTksImlhdCI6MTYzNDg1ODYxOX0.HaEqEPBdKcdwmf0JpUjGCP1yPgTAGvdeE8yT6xXhCY4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/category/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"category",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYWJsby00NzZAaG90bWFpbC5jb20iLCJleHAiOjE2MzQ4OTQ2MTksImlhdCI6MTYzNDg1ODYxOX0.HaEqEPBdKcdwmf0JpUjGCP1yPgTAGvdeE8yT6xXhCY4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tittle\":\"2era clase\",\r\n    \"content\":\"en esta primera clase se vera python\",\r\n    \"img\":\"post/3\",\r\n    \"categoryId\":3,\r\n    \"creationDate\":\"2025-08-04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts/id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYWJsby00NzZAaG90bWFpbC5jb20iLCJleHAiOjE2MzQ4OTQ2MTksImlhdCI6MTYzNDg1ODYxOX0.HaEqEPBdKcdwmf0JpUjGCP1yPgTAGvdeE8yT6xXhCY4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tittle\":\"2era clase\",\r\n    \"content\":\"en esta primera clase se vera python por 4 horas\",\r\n    \"img\":\"post/3.png\",\r\n    \"categoryId\":3,\r\n    \"creationDate\":\"2025-08-04\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/posts/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts/id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYWJsby00NzZAaG90bWFpbC5jb20iLCJleHAiOjE2MzQ4OTQ2MTksImlhdCI6MTYzNDg1ODYxOX0.HaEqEPBdKcdwmf0JpUjGCP1yPgTAGvdeE8yT6xXhCY4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/posts/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts/id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYWJsby00NzZAaG90bWFpbC5jb20iLCJleHAiOjE2MzQ4OTQ2MTksImlhdCI6MTYzNDg1ODYxOX0.HaEqEPBdKcdwmf0JpUjGCP1yPgTAGvdeE8yT6xXhCY4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/posts/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "posts/ tittle or category",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwYWJsby00NzZAaG90bWFpbC5jb20iLCJleHAiOjE2MzQ4OTQ2MTksImlhdCI6MTYzNDg1ODYxOX0.HaEqEPBdKcdwmf0JpUjGCP1yPgTAGvdeE8yT6xXhCY4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/posts?category=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"posts"
+					],
+					"query": [
+						{
+							"key": "tittle",
+							"value": "bienvenido",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
