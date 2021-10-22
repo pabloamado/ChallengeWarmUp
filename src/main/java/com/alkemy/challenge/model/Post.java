@@ -20,7 +20,7 @@ import com.alkemy.challenge.security.model.User;
 
 @Entity
 @Table(name="post")
-@SQLDelete(sql="UPDATE post SET post_deleted = true  WHERE pId=?")
+@SQLDelete(sql="UPDATE post SET post_deleted = true  WHERE post_id=?")
 @Where(clause="post_deleted=false")
 
 public class Post {
