@@ -1,6 +1,5 @@
 package com.alkemy.challenge.Exception.handler;
 
-import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-
 import com.alkemy.challenge.Exception.BodyDtoException;
 import com.alkemy.challenge.Exception.UserException;
 import com.alkemy.challenge.Exception.error.CustomError;
