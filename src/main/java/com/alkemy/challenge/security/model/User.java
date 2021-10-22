@@ -24,7 +24,7 @@ public class User implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id")
-	private Long uId;
+	private Long userId;
 
 	@Column(name = "user_email")
 	private String email;
@@ -54,12 +54,12 @@ public class User implements UserDetails {
 		this.enabled = true;
 	}
 
-	public Long getuId() {
-		return uId;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setuId(Long uId) {
-		this.uId = uId;
+	public void setUserId(Long uId) {
+		this.userId = uId;
 	}
 
 	public void setEmail(String email) {

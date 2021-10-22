@@ -43,7 +43,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override //detalls que seguridad le vamos a dar al protocolo http, que requests aceptar y cuales no
 	protected void configure (HttpSecurity  httpSecurity) throws Exception{
 		
-		httpSecurity.csrf().disable().authorizeRequests().antMatchers("/login","/sign_up").permitAll()
+		httpSecurity.csrf().disable().authorizeRequests().antMatchers("/auth/**").permitAll()
 		.anyRequest().authenticated().and().exceptionHandling().and().sessionManagement()
 		.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		//stateless indica que no abra una sesion y que pida autenticacion por cada endpoint al que
