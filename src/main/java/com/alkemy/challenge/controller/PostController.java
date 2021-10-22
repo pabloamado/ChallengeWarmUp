@@ -1,5 +1,6 @@
 package com.alkemy.challenge.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,9 @@ public class PostController {
 	PostService postService;
 
 	@PostMapping
-	public ResponseEntity<PostDto> savePost(@RequestBody PostDto postDto) {
-
-		PostDto dto = postService.savePost(postDto);
+	public ResponseEntity<PostDto> savePost(@RequestBody PostDto postDto,Principal principal) {
+		
+		PostDto dto = postService.savePost(postDto, principal.getName());
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(dto);
 	}
